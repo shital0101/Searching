@@ -1,0 +1,42 @@
+#include<stdio.h>
+void accept(int a[100],int n)
+{
+   int i;
+   printf("enter the n numbers in array:");
+    for(i=0;i<n;i++)
+   scanf("%d",&a[i]);
+}
+void display(int a[100],int n)
+{
+   int i;
+   printf("\n array elements are:");
+    for(i=0;i<n;i++)
+   printf("%d\t",a[i]);
+}
+int linearsearch(int a[100],int n)
+{
+   int i,num;
+   printf("\n enter the number to search:");
+   scanf("%d",&num);
+
+   for(i=0;i<n;i++)
+   if(num==a[i])
+    {
+      return i;
+    }
+    return -1;
+}
+void main()
+{
+   int n,a[100],p;
+   printf("\n enter the limit:");
+   scanf("%d",&n);
+
+   accept(a,n);
+   display(a,n);
+   p=linearsearch(a,n);
+     if(p==-1)
+      printf("\n number is not found");
+     else
+      printf("\n number is found at position=%d",p);
+}
