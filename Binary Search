@@ -1,0 +1,51 @@
+#include<stdio.h>
+void accept(int a[100],int n)
+{
+  int i;
+  printf("enter the n numbers in array:");
+    for(i=0;i<n;i++)
+  scanf("%d",&a[i]);
+}
+void display(int a[100],int n)
+{
+    int i;
+   printf("the array elements are:");
+    for(i=0;i<n;i++)
+   printf("%d\t",a[i]);
+}
+int binarysearch(int a[100],int n)
+{
+   int i,top,bottom,mid,num;
+   printf("\n enter number to search:");
+   scanf("%d",&num);
+
+   top=0;
+   bottom=n-1;
+  while(top<=bottom)
+   {
+     mid=(top+bottom)/2;
+      if(num==a[mid])
+       return mid;
+      if(num>a[mid])
+       top=mid+1;
+     else
+      bottom=mid-1;
+    }
+      return -1;
+}
+void main()
+{
+    int n,a[100],p;
+     printf("\n enter the limit:");
+    scanf("%d",&n);
+
+    accept(a,n);
+    display(a,n);
+   p=binarysearch(a,n);
+    if(p==-1)
+      printf("\n number is not found");
+    else
+     printf("\n number is found at position=%d",p);
+}
+
+
