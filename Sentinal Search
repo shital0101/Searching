@@ -1,0 +1,45 @@
+#include<stdio.h>
+void accept(int a[100],int n)
+{
+    int i;
+    printf("\n enter the elements in array:");
+     for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+}
+void display(int a[100],int n)
+{
+   int i;
+   printf("\n array elements are:");
+    for(i=0;i<n;i++)
+   printf("%d\t",a[i]);
+}
+int sentinal(int a[100],int n)
+{
+    int i,key;
+    printf("\n enter the key to search:");
+    scanf("%d",&key);
+
+    a[n]=key;
+    while(a[i]!=key)
+     {
+        i++;
+     }
+     if(i==n)
+       return -1;
+     else
+       return i;
+}
+int main()
+{
+     int n,a[100],p;
+     printf("\n enter the limit:");
+     scanf("%d",&n);
+
+    accept(a,n);
+    display(a,n);
+    p=sentinal(a,n);
+      if(p==-1)
+       printf("number is not found");
+      else
+       printf("number is found at position=%d",p);
+}
